@@ -4,12 +4,12 @@ import faiss
 from util import *
 
 
-class ICLLDA(object):
+class NDSGCL(object):
     def __init__(self, conf, training_set, test_set, i):
-        super(ICLLDA, self).__init__(conf, training_set, test_set)
+        super(NDSGCL, self).__init__(conf, training_set, test_set)
         self.config = conf
         self.emb_size = int(self.config['embbedding.size'])
-        args = OptionConf(self.config['NCL'])
+        args = OptionConf(self.config['NDSGCL'])
         self.n_layers = int(args['-n_layer'])
         self.ssl_temp = float(args['-tau'])
         self.ssl_reg = float(args['-ssl_reg'])
